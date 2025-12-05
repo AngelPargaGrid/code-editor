@@ -1,0 +1,47 @@
+<div class="editor-toolbar">
+
+  <div class="toolbar-left">
+    <label class="toggle">
+      <input type="checkbox" (change)="toggleAutoDebounce($event)" />
+      <span class="slider"></span>
+      <span class="label-text">Typing Auto-complete</span>
+    </label>
+
+    <button class="btn primary" (click)="autocomplete()" [disabled]="loading$ | async">
+      Auto-Complete
+    </button>
+  </div>
+
+  <div class="toolbar-right" *ngIf="loading$ | async">
+    <div class="spinner"></div>
+    <span class="loading-text">loading...</span>
+  </div>
+
+</div>
+
+<div #codeEditor id="editor"></div>
+
+<div class="shortcuts-panel">
+  <h2>Keyboard Shortcuts</h2>
+
+  <div class="shortcut-item">
+    <div class="shortcut-name">Auto-Complete</div>
+    <div class="shortcut-keys">Ctrl + Space</div>
+  </div>
+
+  <div class="shortcut-item">
+    <div class="shortcut-name">Undo</div>
+    <div class="shortcut-keys">Cmd + Z</div>
+  </div>
+
+  <div class="shortcut-item">
+    <div class="shortcut-name">Redo</div>
+    <div class="shortcut-keys">Cmd + Y</div>
+  </div>
+
+  <div class="shortcut-item">
+    <div class="shortcut-name">Redo</div>
+    <div class="shortcut-keys">Cmd + SHIFT + Z</div>
+  </div>
+
+</div>

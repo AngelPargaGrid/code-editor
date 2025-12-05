@@ -1,0 +1,33 @@
+{
+  "name": "code-editor-mockup",
+  "version": "1.0.0",
+  "description": "Monorepo with Angular frontend and Node.js + Express backend for code editor",
+  "private": true,
+  "workspaces": [
+    "code-editor-frontend",
+    "code-editor-backend"
+  ],
+  "scripts": {
+    "install:frontend": "cd code-editor-frontend && npm install",
+    "install:backend": "cd code-editor-backend && npm install",
+    "install:all": "npm run install:frontend && npm run install:backend",
+    "dev": "concurrently -k -n FRONTEND,WS,BACKEND -c cyan,magenta,green \"npm run dev:frontend\" \"npm run dev:ws\" \"npm run dev:backend\"",
+    "dev:frontend": "npm --prefix code-editor-frontend run dev",
+    "dev:ws": "node code-editor-frontend/server.js",
+    "dev:backend": "npm --prefix code-editor-backend run dev"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "keywords": [
+    "monorepo",
+    "angular",
+    "nodejs",
+    "express",
+    "code-editor"
+  ]
+}
