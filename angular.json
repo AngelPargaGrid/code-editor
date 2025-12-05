@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "code-editor-frontend": "code-editor-frontend"
+  },
+  "cli": {
+    "analytics": "7b335764-fa71-4321-956d-38c411d8d0ff"
+  }
+}
